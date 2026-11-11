@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "api_version": "2.0.0",
+  "toolpkg_id": "com.operit.prompt_style",
+  "version": "1.0.0",
+  "author": [
+    "Prompt Style Assistant"
+  ],
+  "main": "dist/main.js",
+  "display_name": {
+    "zh": "输出风格助手",
+    "en": "Prompt Style Assistant"
+  },
+  "description": {
+    "zh": "让助手的回复结构保持稳定。在系统提示词组装时追加一段输出规范：结论先行、不写开场套话、篇幅贴合复杂度、缺信息用占位符继续、工具失败换实现、长任务给阶段性结论、区分已确认与未验证。支持三档风格切换、工具清单收敛、调用审计与配置快照回滚。只改输出格式，不改角色设定与语气。",
+    "en": "Keeps the assistant's response structure consistent. Appends a response-convention section while the system prompt is assembled: lead with the result, no preamble, length matched to complexity, placeholders instead of stalling, switch implementation on tool failure, checkpoint conclusions for long tasks, and confirmed-versus-unverified labelling. Includes three style modes, tool-list pruning, a call audit, and configuration snapshots with rollback. Output format only; character and tone stay untouched."
+  },
+  "enabled_by_default": false,
+  "installation_scope": "device",
+  "subpackages": [
+    {
+      "id": "style_tools",
+      "entry": "dist/tools/style_tools.js",
+      "enabled_by_default": false,
+      "display_name": {
+        "zh": "风格设置工具",
+        "en": "Style Settings Tools"
+      },
+      "description": {
+        "zh": "style_status / style_configure / style_audit / style_revert：让模型自己查看与调整输出风格、读取工具调用审计。",
+        "en": "style_status / style_configure / style_audit / style_revert: lets the model inspect and adjust the style profile and read the tool audit."
+      }
+    }
+  ]
+}
